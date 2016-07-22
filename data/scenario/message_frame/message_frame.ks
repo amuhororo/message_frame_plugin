@@ -19,7 +19,7 @@
 ;
 ; ＜使い方＞
 ;  　最初にmessage_frame.ksファイルを読み込んでください。
-;  　[call storage=”message_frame/message_frame.ks”]
+;  　[call storage="message_frame/message_frame.ks"]
 ;
 ;　　行間を単位ありのままで使用したい場合は、下記設定部分を false にしてください。
 ;　　Config.tjs の行間を、単位なしの数値（1.5など）で設定する事はできません。
