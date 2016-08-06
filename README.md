@@ -29,10 +29,11 @@ by hororo http://hororo.wp.xdomain.jp/
 
 ＜ルビについて＞  
 　　※ルビサイズに、Config.tjsで設定した defaultRubySize を指定します。  
+　　※Config.tjsで設定した defaultRubyOffset の値分ルビ位置を変更します。  
 　　※Config.tjsで設定した defaultLineSpacing の値は無視され、強制的に「font-size×0.5」になります。  
 　　※メッセージエリア上に 1行目のルビ用として「font-size×0.35」程のスペースが空きます。  
 
 ＜Ver履歴＞  
-2.02 ： ルビ の表示オフセットに対応。非対応Font表記。216/8/6  
+2.02 ： Config.tjs defaultRubyOffset 値を使用してのルビの表示位置変更に対応。非対応Font表記。216/8/6  
 2.01 ： jsファイルのフォルダ名修正。2016/8/1  
 2.00 ： ルビに対応。2016/7/20
