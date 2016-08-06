@@ -1,4 +1,4 @@
-;【メッセージ枠調整プラグイン Ver.2.01】2016/8/1
+;【メッセージ枠調整プラグイン Ver.2.02】2016/8/6
 ; by hororo http://hororo.wp.xdomain.jp/
 ;
 ; ＜機能＞
@@ -7,7 +7,8 @@
 ;　[補足機能]
 ;　　・自動改行/改ページ時にメッセージが枠からはみ出てしまうのを防ぐ。
 ;　　・行間を px から単位なしに変更可能。
-;　　・ルビサイズ指定と、ルビ使用時の表示ズレ防止を追加。
+;　　・ルビサイズ指定と、ルビ使用時の表示ズレ防止を追加。*
+;　　　*「メイリオ」や「游」シリーズなど、空白の多いFontには対応できません。
 ;
 ; ＜注意点＞
 ;　　スクリプトのエンジン本体を改造していますので、Ver変更には対応できない可能性があります。
@@ -34,14 +35,17 @@ var line_height = {
 // ◆ ルビの行間調整を自動で行う場合は true、しない場合は false
 //　※ルビサイズに、Config.tjsで設定した defaultRubySize を指定します。。
 //　※Config.tjsで設定した defaultLineSpacing の値は無視され、強制的に「font-size×0.5」になります。
+//　※Config.tjsで設定した defaultRubyOffset の値分ルビ位置を変更します。。
 //　※メッセージエリア上に 1行目のルビ用として「font-size×0.35」程のスペースが空きます。
-"ruby" : false
+"ruby" : true
 };
 
 
 if(line_height.ruby == true){
 	LineSpacing = parseInt(this.kag.config.defaultFontSize) * 0.35 ;
-	var style = '<style>.message_inner p {padding-top:' + parseInt(LineSpacing) + 'px}.message_inner p rt {font-size:' + this.kag.config.defaultRubySize + 'px}</style>';
+	var offset = this.kag.config.defaultRubyOffset;
+	offset = (this.kag.config.defaultRubyOffset > 0 ) ? "-" + offset : offset.replace( /-/g , "" ) ;
+	var style = '<style>.message_inner p {padding-top:' + parseInt(LineSpacing) + 'px}rt {font-size:' + this.kag.config.defaultRubySize + 'px;transform:translateY(' + offset + 'px);}</style>';
 	$('head link:last').after(style);
 }
 tf.config_line_height = line_height;
