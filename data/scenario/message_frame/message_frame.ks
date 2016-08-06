@@ -44,9 +44,15 @@ var line_height = {
 if(line_height.ruby == true){
 	LineSpacing = parseInt(this.kag.config.defaultFontSize) * 0.35 ;
 	var offset = this.kag.config.defaultRubyOffset;
-	offset = (this.kag.config.defaultRubyOffset > 0 ) ? "-" + offset : offset.replace( /-/g , "" ) ;
-	var xy = (this.kag.config.vertical == "true" ) ? "X" : "Y" ;
-	var style = '<style>.message_inner p {padding-top:' + parseInt(LineSpacing) + 'px}rt {font-size:' + this.kag.config.defaultRubySize + 'px;transform:translate' + xy + '(' + offset + 'px);}</style>';
+	if(this.kag.config.vertical == "true" ){
+		var tr = "top";
+		var xy = "X";
+	}else{
+		var tr = "right";
+		var xy = "Y";
+		offset = (this.kag.config.defaultRubyOffset > 0 ) ? "-" + offset : offset.replace( /-/g , "" ) ;
+	}
+	var style = '<style>.message_inner p {padding-' + tr + ':' + parseInt(LineSpacing) + 'px}rt {font-size:' + this.kag.config.defaultRubySize + 'px;transform:translate' + xy + '(' + offset + 'px);}</style>';
 	$('head link:last').after(style);
 }
 tf.config_line_height = line_height;
