@@ -18,7 +18,7 @@ tyrano.plugin.kag.tag.text.start = function(pm) {
 	var j_inner_message = this.kag.getMessageInnerLayer();
 	
 	//◆ここから追加
-	var line_height = this.kag.variable.tf.config_line_height;
+	var line_height = this.kag.variable.sf.config_line_height;
 	var LineSpacing = this.kag.config.defaultLineSpacing;
 	if(line_height.ruby == true) var LineSpacing = (parseInt(this.kag.config.defaultFontSize) * 0.5 );
 	if(line_height.nounit == true) var line_height = (parseInt(this.kag.config.defaultFontSize) + parseInt(LineSpacing))  / parseInt(this.kag.config.defaultFontSize);
@@ -86,7 +86,7 @@ tyrano.plugin.kag.tag.position.start = function(pm) {
 
 	//指定のレイヤを取得
 	var target_layer = this.kag.layer.getLayer(pm.layer, pm.page).find(".message_outer");
-
+	
 	var new_style = {
 		left : pm.left + "px",
 		top : pm.top + "px",
@@ -112,6 +112,15 @@ tyrano.plugin.kag.tag.position.start = function(pm) {
 		target_layer.css("background-image", "");
 		target_layer.css("background-color", $.convertColor(this.kag.config.frameColor));
 
+/*
+	} else if (pm.border != "") {
+		target_layer.css("-webkit-border-image", "url(./data/image/" + pm.border + ") 10");
+		target_layer.css("border-style", "solid");
+		target_layer.css("border-width", "10px");
+		target_layer.css("opacity", pm.opacity);
+		target_layer.css("background-color", "");
+		target_layer.css("box-sizing", "border-box");
+*/
 	} else if (pm.frame != "") {
 	
 		var storage_url = "";
@@ -126,7 +135,7 @@ tyrano.plugin.kag.tag.position.start = function(pm) {
 		target_layer.css("background-repeat", "no-repeat");
 		target_layer.css("opacity", 1);
 		target_layer.css("background-color", "");
-
+		
 	}
 	
 	if (pm.opacity != "") {
