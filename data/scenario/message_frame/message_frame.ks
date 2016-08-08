@@ -1,4 +1,4 @@
-;【メッセージ枠調整プラグイン Ver.2.02】2016/8/6
+;【メッセージ枠調整プラグイン Ver.2.02】2016/8/9
 ; by hororo http://hororo.wp.xdomain.jp/
 ;
 ; ＜機能＞
@@ -55,7 +55,7 @@ if(line_height.ruby == true){
 	var style = '<style>.message_inner p {padding-' + tr + ':' + parseInt(LineSpacing) + 'px}rt {font-size:' + this.kag.config.defaultRubySize + 'px;transform:translate' + xy + '(' + offset + 'px);}</style>';
 	$('head link:last').after(style);
 }
-tf.config_line_height = line_height;
+sf.config_line_height = line_height;
 [endscript]
 [loadjs storage="message_frame/message_frame.js"]
 [return]
