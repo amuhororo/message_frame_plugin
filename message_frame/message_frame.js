@@ -21,8 +21,8 @@
 		"line_height" : TYRANO.kag.stat.mp.line_height || "nounit" ,//line-heightを単位なしにする場合は nounit ※数値値指定可
 		"padding_top" : TYRANO.kag.stat.mp.padding_top || 0        ,//message_inner p の ppadding-topを0にする場合は 0 ※数値値指定可
 		"align_outer" : TYRANO.kag.stat.mp.align_outer || "true"   ,//message_inner の10pxズレを無しにする場合は true
-		"auto_p"      : TYRANO.kag.stat.mp.auto_p      || "true"   ,//自動改ページ時に、自動でクリック待ちを入れる場合は true
-		"valLength"   : 0                                      ,//自動改ページ用、文字数カウント用
+		"auto_p"      : TYRANO.kag.stat.mp.auto_p      || "false"  ,//自動改ページ時に、自動でクリック待ちを入れる場合は true
+		"valLength"   : 0                                          ,//自動改ページ用、文字数カウント用
 		"FontSize"    : parseInt(TYRANO.kag.config.defaultFontSize)    ,//Config参照用
 		"LineSpacing" : parseInt(TYRANO.kag.config.defaultLineSpacing)  //Config参照用
 	};
