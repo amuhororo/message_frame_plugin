@@ -37,7 +37,7 @@
 |--------------|:----:|------|
 | line_height  |  ×  | `message_inner` の `line-heigth` を指定します。*1<br>省略時は自動計算で単位なし。 |
 | padding_top  |  ×  | `message_inner p` の `padding-top` 値を指定します（px値、数値のみ）。*1<br>省略時は 0。 |
-| align_outer  |  ×  | `message_inner` の10pxズレを0にする場合は `true`。*1<br>省略時は `true`。 |
+| align_inner  |  ×  | `message_inner` の10pxズレを0にする場合は `true`。*1<br>省略時は `true`。 |
 | auto_p       |  ×  | 自動改ページ時にクリック待ちを入れる場合は `true`。<br>省略時は `false`。 |
 
 *1 ティラノの仕様のままにする場合は `default` を指定します。
@@ -52,7 +52,7 @@
 
 - 例2：全てティラノのデフォルトのままにする。  
   ```
-  [plugin name="message_frameg" line_height="default" padding_top="default" align_outer="default"]
+  [plugin name="message_frameg" line_height="default" padding_top="default" align_inner="default"]
   ```
 
 - 例3：行間は単位無しで1.3に指定。padding-top 0 、message_inner の 10pxズレ無し。

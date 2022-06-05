@@ -20,7 +20,7 @@
 	TYRANO.kag.tmp.memocho.message_frame = {
 		"line_height" : TYRANO.kag.stat.mp.line_height || "nounit" ,//line-heightを単位なしにする場合は nounit ※数値値指定可
 		"padding_top" : TYRANO.kag.stat.mp.padding_top || 0        ,//message_inner p の ppadding-topを0にする場合は 0 ※数値値指定可
-		"align_outer" : TYRANO.kag.stat.mp.align_outer || "true"   ,//message_inner の10pxズレを無しにする場合は true
+		"align_inner" : TYRANO.kag.stat.mp.align_inner || "true"   ,//message_inner の10pxズレを無しにする場合は true
 		"auto_p"      : TYRANO.kag.stat.mp.auto_p      || "false"  ,//自動改ページ時に、自動でクリック待ちを入れる場合は true
 		"valLength"   : 0                                          ,//自動改ページ用、文字数カウント用
 		"FontSize"    : parseInt(TYRANO.kag.config.defaultFontSize)    ,//Config参照用
@@ -277,7 +277,7 @@
 
 		//--- ◆ 追加 ----------------------------------------------------------------------------
 		// innerの10pxズレを補正
-		if(this.kag.tmp.memocho.message_frame.align_outer == "true"){
+		if(this.kag.tmp.memocho.message_frame.align_inner == "true"){
 			new_style_inner["top"] = target_layer.css("top");
 			new_style_inner["left"] = target_layer.css("left");
 			new_style_inner["width"] = target_layer.css("width");
