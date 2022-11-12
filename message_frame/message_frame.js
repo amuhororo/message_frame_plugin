@@ -1,4 +1,4 @@
-//【メッセージ枠調整プラグイン】
+// メッセージ枠調整プラグイン v3.50
 // by hororo https://memocho.no-tenki.me/
 
 (function () {
